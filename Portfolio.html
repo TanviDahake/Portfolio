@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanvi Dahake - Portfolio</title>
+    <link rel="stylesheet" href="Portfolio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <header id="home" class="animate__animated animate__fadeIn">
+        <div class="container">
+            <div class="profile-text">
+                <h1>Tanvi Dahake</h1>
+                <p>Electronics and Communication Engineer</p>
+                <p class="summary">Beginner in Python, HTML/CSS, Java | Passionate about creating innovative solutions.</p>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#languages">Languages</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="about" class="section animate__animated animate__fadeInUp">
+            <div class="container">
+                <h2>About Me</h2>
+                <p>Electronics Engineering student seeking opportunities to apply theoretical knowledge and practical skills in a dynamic work environment. Eager to contribute to innovative projects, learn from experienced professionals, and further develop expertise in electronic systems and information technologies.</p>
+            </div>
+        </section>
+
+        <section id="projects" class="section animate__animated animate__fadeInUp">
+            <div class="container">
+                <h2>Projects</h2>
+                <div class="project">
+                    <h3>Rotating Whiteboard with Automatic Erasing Mechanism</h3>
+                    <p>Developed a rotating whiteboard system that integrates Arduino technology and servo motors to create an automated erasing mechanism. This project involved designing and programming the Arduino microcontroller, implementing servo motor control for rotation, and integrating sensors for automated erasing, enhancing functionality in educational and professional settings.</p>
+                    <p><strong>Technologies used:</strong> Arduino, Embedded C programming, Servo motors</p>
+                </div>
+                <div class="project">
+                    <h3>Infrared Touch Sensor</h3>
+                    <p>Designed and deployed an infrared touch sensor solution using microcontroller 8051 and photodetectors to enhance interactive functionality in devices. The project included hardware design, circuit implementation, and firmware development, enabling precise touch detection for applications requiring intuitive user interfaces.</p>
+                    <p><strong>Technologies used:</strong> Microcontroller 8051, Infrared sensors, Photodetectors</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section animate__animated animate__fadeInUp">
+            <div class="container">
+                <h2>Skills</h2>
+
+                <div class="skills-category">
+                    <h3>Technical Skills</h3>
+                    <ul>
+                        <li>Python <span class="bar" style="width: 50%;"></span></li>
+                        <li>HTML/CSS <span class="bar" style="width: 60%;"></span></li>
+                        <li>Java <span class="bar" style="width: 30%;"></span></li>
+                    </ul>
+                </div>
+
+                <div class="skills-category">
+                    <h3>Soft Skills</h3>
+                    <ul>
+                        <li>Teamwork </li>
+                        <li>Good Listening </li>
+                        <li>Critical Thinking </li>
+                        <li>Hardworking </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="languages" class="section animate__animated animate__fadeInUp">
+            <div class="container">
+                <h2>Languages</h2>
+                <div class="Languages">
+                    <p>English</p>
+                    <p>Hindi</p>
+                    <p>Marathi</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Tanvi Dahake. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling functionality
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const sectionId = this.getAttribute('href').substring(1);
+                const section = document.getElementById(sectionId);
+
+                if (section) {
+                    section.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add animations using Animate.css library
+        document.addEventListener('DOMContentLoaded', function () {
+            const animatedElements = document.querySelectorAll('.animate__animated');
+
+            function animateOnScroll() {
+                animatedElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    if (elementTop < window.innerHeight - 100) {
+                        element.classList.add('animate__fadeInUp');
+                    }
+                });
+            }
+
+            animateOnScroll();
+
+            window.addEventListener('scroll', animateOnScroll);
+        });
+    </script>
+</body>
+</html>
